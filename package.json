@@ -1,0 +1,21 @@
+{
+    "name": "TelegramBaseTemplate",
+    "module": "index.ts",
+    "type": "module",
+    "private": true,
+    "devDependencies": {
+        "@types/bun": "latest"
+    },
+    "scripts": {
+        "start": "bun run src/index.ts"
+    },
+    "peerDependencies": {
+        "typescript": "^5"
+    },
+    "dependencies": {
+        "@grammyjs/conversations": "^2.1.0",
+        "@grammyjs/runner": "^2.0.3",
+        "colors": "^1.4.0",
+        "grammy": "^1.36.1"
+    }
+}
