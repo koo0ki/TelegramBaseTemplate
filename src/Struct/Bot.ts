@@ -1,17 +1,9 @@
-import { run } from "@grammyjs/runner";
-import {
-    Bot,
-    Context as GrammyContext,
-    session,
-    type SessionFlavor,
-} from "grammy";
-import Logger from "@src/Struct/Helpers/Logger";
-import ModuleLoader from "@src/Struct/Helpers/ModuleLoader";
-import {
-    conversations,
-    type ConversationFlavor,
-} from "@grammyjs/conversations";
-import { Utils } from "@src/Struct/Helpers/Utils";
+import { run } from '@grammyjs/runner';
+import { Bot, Context as GrammyContext, session, type SessionFlavor } from 'grammy';
+import Logger from '@src/Struct/Helpers/Logger';
+import ModuleLoader from '@src/Struct/Helpers/ModuleLoader';
+import { conversations, type ConversationFlavor } from '@grammyjs/conversations';
+import { Utils } from '@src/Struct/Helpers/Utils';
 
 interface SessionData {
     count: 0;
@@ -25,7 +17,7 @@ export default class extends Bot<ConversationFlavor<Context>> {
     }
 
     private handlers = {
-        Modules: new ModuleLoader(this),
+        Modules: new ModuleLoader(this)
     };
 
     public utils = new Utils(this);
@@ -34,8 +26,8 @@ export default class extends Bot<ConversationFlavor<Context>> {
         try {
             this.use(
                 session({
-                    initial: () => this.initial(),
-                }),
+                    initial: () => this.initial()
+                })
             );
             this.use(conversations());
 

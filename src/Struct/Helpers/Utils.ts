@@ -1,4 +1,4 @@
-import type Bot from "@src/Struct/Bot";
+import type Bot from '@src/Struct/Bot';
 
 export class Utils {
     constructor(private bot: Bot) {
@@ -15,7 +15,7 @@ export class Utils {
 
     resolveNumber(num: number) {
         return String(num)
-            .split("")
+            .split('')
             .reverse()
             .map((v, i) => {
                 if ((i + 1) % 3 === 0 && num.toString().length - 1 !== i) {
@@ -25,6 +25,6 @@ export class Utils {
                 }
             })
             .reverse()
-            .join("");
+            .join('');
     }
 }
