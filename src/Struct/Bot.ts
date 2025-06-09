@@ -40,7 +40,7 @@ export default class extends Bot<ConversationFlavor<Context>> {
             this.use(conversations());
 
             await this.handlers.Modules.load();
-            const runner = run(this);
+            run(this);
             Logger.info(`${(await this.api.getMe()).username} is inited`);
         } catch (e) {
             Logger.error(String(e));
