@@ -1,8 +1,7 @@
-import { type ConversationFlavor } from '@grammyjs/conversations';
 import Bot, { type Context } from '@src/Struct/Bot';
 import { Composer } from 'grammy';
 
-export default class StartModule extends Composer<ConversationFlavor<Context>> {
+export default class StartModule extends Composer<Context> {
     constructor(private bot: Bot) {
         super();
         this.bot.use(this);

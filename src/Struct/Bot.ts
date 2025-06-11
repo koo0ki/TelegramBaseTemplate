@@ -1,13 +1,13 @@
 import { run } from '@grammyjs/runner';
-import { Bot, Context as GrammyContext, session, type SessionFlavor } from 'grammy';
+import { Bot, Context as GrammyContext } from 'grammy';
 import Logger from '@src/Struct/Helpers/Logger';
 import ModuleLoader from '@src/Struct/Helpers/ModuleLoader';
 import { conversations, type ConversationFlavor } from '@grammyjs/conversations';
 import { Utils } from '@src/Struct/Helpers/Utils';
 
-export type Context = GrammyContext & SessionFlavor<SessionData>;
+export type Context = ConversationFlavor<GrammyContext>;
 
-export default class extends Bot<ConversationFlavor<Context>> {
+export default class extends Bot<Context> {
     constructor(readonly token: string) {
         super(token);
     }
