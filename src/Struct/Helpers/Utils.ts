@@ -5,7 +5,7 @@ export class Utils {
         this.bot = bot;
     }
 
-    random(min: number, max: number) {
+    public random(min: number, max: number) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
@@ -13,7 +13,7 @@ export class Utils {
         return array[this.random(0, array.length - 1)];
     }
 
-    resolveNumber(num: number) {
+    public resolveNumber(num: number) {
         return String(num)
             .split('')
             .reverse()

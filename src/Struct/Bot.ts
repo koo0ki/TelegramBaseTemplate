@@ -5,10 +5,6 @@ import ModuleLoader from '@src/Struct/Helpers/ModuleLoader';
 import { conversations, type ConversationFlavor } from '@grammyjs/conversations';
 import { Utils } from '@src/Struct/Helpers/Utils';
 
-interface SessionData {
-    count: 0;
-}
-
 export type Context = GrammyContext & SessionFlavor<SessionData>;
 
 export default class extends Bot<ConversationFlavor<Context>> {
@@ -22,13 +18,8 @@ export default class extends Bot<ConversationFlavor<Context>> {
 
     public utils = new Utils(this);
 
-    async run() {
+    public async run() {
         try {
-            this.use(
-                session({
-                    initial: () => this.initial()
-                })
-            );
             this.use(conversations());
 
             await this.handlers.Modules.load();
@@ -38,9 +29,5 @@ export default class extends Bot<ConversationFlavor<Context>> {
             Logger.error(String(e));
             process.exit(0);
         }
-    }
-
-    private initial(): SessionData {
-        return { count: 0 };
     }
 }
