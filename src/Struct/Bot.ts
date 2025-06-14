@@ -1,9 +1,9 @@
-import { run } from '@grammyjs/runner';
-import { Bot, Context as GrammyContext } from 'grammy';
-import Logger from '@src/Struct/Helpers/Logger';
-import ModuleLoader from '@src/Struct/Helpers/ModuleLoader';
-import { conversations, type ConversationFlavor } from '@grammyjs/conversations';
-import { Utils } from '@src/Struct/Helpers/Utils';
+import { run } from "@grammyjs/runner";
+import { Bot, Context as GrammyContext } from "grammy";
+import Logger from "@src/Struct/Helpers/Logger";
+import ModuleLoader from "@src/Struct/Helpers/ModuleLoader";
+import { conversations, type ConversationFlavor } from "@grammyjs/conversations";
+import { Utils } from "@src/Struct/Helpers/Utils";
 
 export type Context = ConversationFlavor<GrammyContext>;
 

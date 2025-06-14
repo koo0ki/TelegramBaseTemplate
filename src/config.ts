@@ -1,3 +1,3 @@
 export const system = {
-    token: "",
+    token: Bun.env.BOT_TOKEN!
 };
